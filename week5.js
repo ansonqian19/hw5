@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async function() {
         let days = daysInput.value
        
         // - Check to see if the user entered anything; if so:
-        if (location.length > 0) {
+        if ((location.length > 0)&&(days>0)) {
             // - Construct a URL to call the WeatherAPI.com API
                 let url = `https://api.weatherapi.com/v1/forecast.json?key=aa7277ed52ae458b85e153846212704&q=${location}&days=${days}`
             // - Fetch the url, wait for a response, store the response in memory
@@ -95,6 +95,8 @@ window.addEventListener('DOMContentLoaded', async function() {
                     `
                 )
             }   
+        } else {
+            alert(`Invaid input!`)
         }
              
     })
